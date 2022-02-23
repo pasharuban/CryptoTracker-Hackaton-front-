@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+!!!
+Server works only local! (so u can check only mainPage functional)
+
 ## Available Scripts
 
 In the project directory, you can run:
