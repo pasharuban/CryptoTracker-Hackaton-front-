@@ -20,10 +20,6 @@ import {
 import { routes } from "../../constants/routes";
 import styled from "styled-components";
 
-const AlertText = styled.p`
-  color: #b41919;
-`;
-
 const RegistrationForm: React.FC = () => {
   const [form] = Form.useForm();
   const dispatch = useDispatch();
@@ -33,15 +29,9 @@ const RegistrationForm: React.FC = () => {
   const currentUser = useSelector(getCurrentUserData);
   const registrationError = useSelector(getAuthErrorState);
 
-  const [error, setError] = useState(registrationError);
+  if (registrationError) console.log(registrationError);
 
-  let formSubmitElement = registrationError ? (
-    <FormButton>
-      <AlertText>Ошибка!Повторите ввод</AlertText>
-    </FormButton>
-  ) : (
-    <FormButton>login</FormButton>
-  );
+  let formSubmitElement = <FormButton>Sign Up</FormButton>;
 
   if (loading) formSubmitElement = <LoadingSpinner />;
 

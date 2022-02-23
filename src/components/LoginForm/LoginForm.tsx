@@ -49,9 +49,6 @@ const CreateAccountLink = styled(CreateAccountRequest)`
   }
 `;
 
-const AlertText = styled.p`
-  color: #b41919;
-`;
 const LoginForm: React.FC = () => {
   const [form] = Form.useForm();
   const dispatch = useDispatch();
@@ -61,14 +58,9 @@ const LoginForm: React.FC = () => {
   const location: Record<string, any> = useLocation();
   const currentUser = useSelector(getCurrentUserData);
   const loginError = useSelector(getAuthErrorState);
+  if (loginError) console.log("login error");
 
-  let formSubmitElement = loginError ? (
-    <FormButton>
-      <AlertText>Ошибка!Повторите ввод</AlertText>
-    </FormButton>
-  ) : (
-    <FormButton>login</FormButton>
-  );
+  let formSubmitElement = <FormButton>login</FormButton>;
 
   if (loading) formSubmitElement = <LoadingSpinner />;
 
