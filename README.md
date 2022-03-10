@@ -3,7 +3,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 !!!
-Server works only local! (so u can check only mainPage functional)
+Server works only locally (on another computer)! (so u can check only mainPage's functional)
+
+To run project:
+
+1)npm install
+
+2)npm start
 
 ## Available Scripts
 
